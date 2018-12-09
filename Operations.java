@@ -1,5 +1,5 @@
 package Calculator;
-import java.math.*;
+
 public class Operations {
 
 	String sum(String a,String b)
@@ -22,12 +22,12 @@ public class Operations {
 		return integer(a)/integer(b)+"";
 	}
 	
-	private int integer(String s)
+	private double integer(String s)
 	{
-		if(s.equalsIgnoreCase(""))
+		if(s.trim().equalsIgnoreCase(""))
 			return 0;
 		else
-			return Integer.parseInt(s);
+			return Double.parseDouble(s);
 	}
 	
 	
@@ -38,13 +38,16 @@ public class Operations {
 		String s="";
 		
 		System.out.println(obj.integer(s));
-		System.out.println();
 		
 		String s1=" ";
 		char c=(char)s1.charAt(0);
-		System.out.println(c);
+		System.out.println(obj.integer(String.valueOf(c)));
 		
 		System.out.println();
+		
+		String result=obj.div("4", "3");
+		
+		System.out.println(result);
 	}
 	
 }
